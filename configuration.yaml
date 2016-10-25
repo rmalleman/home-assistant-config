@@ -215,14 +215,14 @@ group:
     - sensor.downstairs_co_status
     - sensor.downstairs_smoke_status
 
-#binary_sensor:
-#  - platform: digital_ocean
-#    droplets:
-#      - 'mattvps'
 
-#digital_ocean:
-#  access_token: !env_var DIGITAL_OCEAN_KEY
+digital_ocean:
+  access_token: !env_var DIGITAL_OCEAN_KEY
  
+binary_sensor:
+  - platform: digital_ocean
+    droplets:
+      - 'mattsvps'
 
 # Discover some devices automatically
 discovery:
