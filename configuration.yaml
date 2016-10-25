@@ -1,0 +1,311 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  temperature_unit: F
+  time_zone: !env_var HOME_TIMEZONE 
+  elevation: !env_var HOME_ELEVATION
+  latitude: !env_var HOME_LATITUDE
+  longitude: !env_var HOME_LONGITUDE
+
+weblink:
+  entities:
+    - name: Router
+      url: http://192.168.1.1
+      icon: mdi:router-wireless
+    - name: Sonarr
+      url: http://192.168.1.10:8989
+    - name: sabnzbd
+      url: http://192.168.1.10:2000
+    - name: omgwtfnzb
+      url: https://omgwtfnzbs.org/
+    - name: couchpotato
+      url: http://192.168.1.10:5050
+
+notify:
+  name: send_matt
+  platform: smtp
+  server: smtp.gmail.com
+  port: 587
+  sender: !env_var NOTIFY_GMAIL_USERNAME
+  starttls: true
+  username: !env_var NOTIFY_GMAIL_USERNAME
+  password: !env_var NOTIFY_GMAIL_PASSWORD
+  recipient: !env_var NOTIFY_GMAIL_RECIPIENT 
+
+zone:
+- name: Mom's
+  latitude: !env_var ZONE_LATITUDE_MOM
+  longitude: !env_var ZONE_LONGITUDE_MOM
+  radius: 25
+  icon: mdi:home
+- name: Dad's
+  latitude: !env_var ZONE_LATITUDE_DAD
+  longitude: !env_var ZONE_LONGITUDE_DAD
+  radius: 25
+  icon: mdi:home
+- name: Andy's
+  latitude: !env_var ZONE_LATITUDE_ANDY
+  longitude: !env_var ZONE_LONGITUDE_ANDY
+  radius: 25
+  icon: mdi:home
+- name: Artemis
+  latitude: !env_var ZONE_LATITUDE_ARTEMIS
+  longitude: !env_var ZONE_LONGITUDE_ARTEMIS
+  radius: 25
+  icon: mdi:office
+
+proximity:
+  home:
+      devices:
+        - device_tracker.qhaatboe_kltespr
+      tolerance: 50
+      unit_of_measurement: mi
+  moms:
+      devices:
+        - device_tracker.qhaatboe_kltespr
+      tolerance: 50
+      unit_of_measurement: mi
+  dads:
+      devices:
+        - device_tracker.qhaatboe_kltespr
+      tolerance: 50
+      unit_of_measurement: mi
+  andys:
+      devices:
+        - device_tracker.qhaatboe_kltespr
+      tolerance: 50
+      unit_of_measurement: mi
+  artemis:
+      devices:
+        - device_tracker.qhaatboe_kltespr
+      tolerance: 50
+      unit_of_measurement: mi
+
+
+
+
+media_player:
+  platform: kodi
+  host: !env_var KODI_HOST
+  port: !env_var KODI_PORT
+  name: Kodi
+  user: !env_var KODI_USERNAME
+  password: !env_var KODI_PASSWORD
+
+
+device_tracker:
+  - platform: nmap_tracker
+    hosts: 192.168.1.5
+    home_interval: 10
+  - platform: owntracks
+    max_gps_accuracy: 200
+  
+sensor:
+- platform: speedtest
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+
+- platform: cpuspeed
+  name: CPU 
+
+- platform: forecast
+  api_key: !env_var FORECAST_API_KEY
+  monitored_conditions:
+    - summary
+    - icon
+    - nearest_storm_distance
+    - nearest_storm_bearing
+    - precip_type
+    - precip_intensity
+    - precip_probability
+    - temperature
+    - apparent_temperature
+    - wind_speed
+    - wind_bearing
+    - cloud_cover
+    - humidity
+    - pressure
+    - visibility
+
+- platform: sabnzbd
+  name: SAB
+  api_key: !env_var SAB_API_KEY 
+  host: !env_var SAB_HOST
+  port: !env_var SAB_PORT
+  monitored_variables:
+    - 'current_status'
+    - 'speed'
+    - 'queue_size'
+    - 'queue_remaining'
+    - 'disk_size'
+    - 'disk_free'
+
+- platform: nest
+  monitored_conditions:
+    - 'temperature'
+    - 'target'
+    - 'humidity'
+    - 'last_ip'
+    - 'local_ip'
+    - 'last_connection'
+    - 'battery_level'
+    - 'weather_condition'
+    - 'weather_temperature'
+    - 'weather_humidity'
+    - 'wind_speed'
+    - 'wind_direction'
+    - 'co_status'
+    - 'smoke_status'
+
+
+
+nest:
+  username: !env_var NEST_USERNAME
+  password: !env_var NEST_PASSWORD
+
+climate:
+  platform: nest
+
+group:
+  people: device_tracker.qhaatboe_kltespr
+  Computer:
+   - sensor.cpu
+   - sensor.speedtest_download
+   - sensor.speedtest_ping
+   - sensor.speedtest_upload
+   - sensor.sab_disk
+   - sensor.sab_disk_free
+   - sensor.sab_left
+   - sensor.sab_queue
+   - sensor.sab_speed
+   - sensor.sab_status
+  weather:
+   - sun.sun 
+   - sensor.forecastio_apparent_temperature
+   - sensor.forecastio_cloud_coverage
+   - sensor.forecastio_humidity
+   - sensor.forecastio_icon
+   - sensor.forecastio_nearest_storm_bearing
+   - sensor.forecastio_nearest_storm_distance
+   - sensor.forecastio_precip
+   - sensor.forecastio_precip_intensity
+   - sensor.forecastio_precip_probability
+   - sensor.forecastio_pressure
+   - sensor.forecastio_summary
+   - sensor.forecastio_temperature
+   - sensor.forecastio_wind_bearing
+   - sensor.forecastio_wind_speed
+   - sensor.forecastio_visibility
+  nest:
+    - sensor.kitchen_temperature
+    - sensor.kitchen_target
+    - sensor.kitchen_humidity
+    - sensor.kitchen_mode
+    - sensor.kitchen_last_ip
+    - sensor.kitchen_local_ip
+    - sensor.kitchen_last_connection
+    - sensor.kitchen_battery_level
+    - sensor.kitchen_weather_condition
+    - sensor.kitchen_weather_temperature
+    - sensor.kitchen_weather_humidity
+    - sensor.kitchen_wind_speed
+    - sensor.kitchen_wind_direction
+    - sensor.downstairs_co_status
+    - sensor.downstairs_smoke_status
+
+#binary_sensor:
+#  - platform: digital_ocean
+#    droplets:
+#      - 'mattvps'
+
+#digital_ocean:
+#  access_token: !env_var DIGITAL_OCEAN_KEY
+ 
+
+# Discover some devices automatically
+discovery:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+# Allows you to issue voice commands from the frontend
+conversation:
+
+# Checks for available updates
+updater:
+
+# Enables the frontend
+frontend:
+
+# Enables support for tracking state changes over time.
+history:
+
+http:
+  api_password: !env_var HTTP_API_PASSWORD
+
+mqtt:
+  broker: !env_var MQTT_BROKER
+  port: !env_var MQTT_PORT
+  client_id: !env_var MQTT_CLIENT_ID
+  keepalive: !env_var MQTT_KEEPALIVE
+  username: !env_var MQTT_USERNAME
+  password: !env_var MQTT_PASSWORD
+  protocol: !env_var MQTT_PROTOCOL
+
+
+automation:
+- alias: Send matt a sms when nobody is home
+  trigger:
+    platform: state
+    entity_id: group.all_devices
+    from: 'home'
+    to: 'not_home'
+  action:
+    service: notify.send_matt
+    data:
+      message: 'everyone has left the house'
+      target:
+        - !env_var MATT_SMS_EMAIL
+
+
+- alias: Send matt a sms when somebody gets home
+  trigger:
+    platform: state
+    entity_id: group.all_devices
+    from: 'not_home'
+    to: 'home'
+  action:
+    service: notify.send_matt
+    data:
+      message: 'somebody is now home'
+      target:
+        - !env_var MATT_SMS_EMAIL
+
+
+- alias: Send matt a sms when file starts downloading
+  trigger:
+    platform: state
+    entity_id: sensor.sab_status
+    from: 'Idle'
+    to: 'Downloading'
+  action:
+    service: notify.send_matt
+    data:
+      message: 'file downloading'
+      target:
+        - !env_var MATT_SMS_EMAIL
+- alias: Update notifications
+  trigger:
+    - platform: state
+      entity_id: updater.updater
+  action:
+    service: notify.send_matt
+    data:
+      message: 'There is a new Home Assistant release available.'
+      target:
+        - !env_var MATT_SMS_EMAIL
