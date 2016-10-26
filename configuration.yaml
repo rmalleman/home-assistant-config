@@ -171,6 +171,7 @@ climate:
 group:
   people: device_tracker.qhaatboe_kltespr
   Computer:
+   - binary_sensor.mattsvps 
    - sensor.cpu
    - sensor.speedtest_download
    - sensor.speedtest_ping
