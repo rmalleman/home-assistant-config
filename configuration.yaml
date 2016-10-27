@@ -83,14 +83,6 @@ history:
 http:
   api_password: !env_var HTTP_API_PASSWORD
 
-mqtt:
-  broker: !env_var MQTT_BROKER
-  port: !env_var MQTT_PORT
-  client_id: !env_var MQTT_CLIENT_ID
-  keepalive: !env_var MQTT_KEEPALIVE
-  username: !env_var MQTT_USERNAME
-  password: !env_var MQTT_PASSWORD
-  protocol: !env_var MQTT_PROTOCOL
-
+mqtt: !include mqtt.yaml 
 
 automation: !include automation.yaml

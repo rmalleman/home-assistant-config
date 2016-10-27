@@ -1,0 +1,7 @@
+broker: !env_var MQTT_BROKER
+port: !env_var MQTT_PORT
+client_id: !env_var MQTT_CLIENT_ID
+keepalive: !env_var MQTT_KEEPALIVE
+username: !env_var MQTT_USERNAME
+password: !env_var MQTT_PASSWORD
+protocol: !env_var MQTT_PROTOCOL
