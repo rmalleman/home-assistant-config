@@ -1,0 +1,25 @@
+home:
+    devices:
+      - device_tracker.qhaatboe_kltespr
+    tolerance: 50
+    unit_of_measurement: mi
+moms:
+    devices:
+      - device_tracker.qhaatboe_kltespr
+    tolerance: 50
+    unit_of_measurement: mi
+dads:
+    devices:
+      - device_tracker.qhaatboe_kltespr
+    tolerance: 50
+    unit_of_measurement: mi
+andys:
+    devices:
+      - device_tracker.qhaatboe_kltespr
+    tolerance: 50
+    unit_of_measurement: mi
+artemis:
+    devices:
+      - device_tracker.qhaatboe_kltespr
+    tolerance: 50
+    unit_of_measurement: mi
