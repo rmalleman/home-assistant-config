@@ -1,0 +1,9 @@
+name: send_matt
+platform: smtp
+server: smtp.gmail.com
+port: 587
+sender: !env_var NOTIFY_GMAIL_USERNAME
+starttls: true
+username: !env_var NOTIFY_GMAIL_USERNAME
+password: !env_var NOTIFY_GMAIL_PASSWORD
+recipient: !env_var NOTIFY_GMAIL_RECIPIENT

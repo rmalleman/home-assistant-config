@@ -1,5 +1,4 @@
 homeassistant:
-  # Name of the location where Home Assistant is running
   name: Home
   temperature_unit: F
   time_zone: !env_var HOME_TIMEZONE 
@@ -9,17 +8,8 @@ homeassistant:
 
 weblink: !include weblinks.yaml
 
-notify:
-  name: send_matt
-  platform: smtp
-  server: smtp.gmail.com
-  port: 587
-  sender: !env_var NOTIFY_GMAIL_USERNAME
-  starttls: true
-  username: !env_var NOTIFY_GMAIL_USERNAME
-  password: !env_var NOTIFY_GMAIL_PASSWORD
-  recipient: !env_var NOTIFY_GMAIL_RECIPIENT 
-
+notify: !include notify.yaml
+  
 zone: !include zones.yaml
 
 proximity: !include proximity.yaml
