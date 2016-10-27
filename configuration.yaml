@@ -40,66 +40,7 @@ device_tracker:
   - platform: owntracks
     max_gps_accuracy: 200
   
-sensor:
-- platform: speedtest
-  monitored_conditions:
-    - ping
-    - download
-    - upload
-
-- platform: cpuspeed
-  name: CPU 
-
-- platform: forecast
-  api_key: !env_var FORECAST_API_KEY
-  monitored_conditions:
-    - summary
-    - icon
-    - nearest_storm_distance
-    - nearest_storm_bearing
-    - precip_type
-    - precip_intensity
-    - precip_probability
-    - temperature
-    - apparent_temperature
-    - wind_speed
-    - wind_bearing
-    - cloud_cover
-    - humidity
-    - pressure
-    - visibility
-
-- platform: sabnzbd
-  name: SAB
-  api_key: !env_var SAB_API_KEY 
-  host: !env_var SAB_HOST
-  port: !env_var SAB_PORT
-  monitored_variables:
-    - 'current_status'
-    - 'speed'
-    - 'queue_size'
-    - 'queue_remaining'
-    - 'disk_size'
-    - 'disk_free'
-
-- platform: nest
-  monitored_conditions:
-    - 'temperature'
-    - 'target'
-    - 'humidity'
-    - 'last_ip'
-    - 'local_ip'
-    - 'last_connection'
-    - 'battery_level'
-    - 'weather_condition'
-    - 'weather_temperature'
-    - 'weather_humidity'
-    - 'wind_speed'
-    - 'wind_direction'
-    - 'co_status'
-    - 'smoke_status'
-
-
+sensor: !include sensors.yaml
 
 nest:
   username: !env_var NEST_USERNAME
