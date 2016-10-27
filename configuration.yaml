@@ -16,12 +16,7 @@ proximity: !include proximity.yaml
 
 media_player: !include media_player.yaml
 
-device_tracker:
-  - platform: nmap_tracker
-    hosts: 192.168.1.5
-    home_interval: 10
-  - platform: owntracks
-    max_gps_accuracy: 200
+device_tracker: !include device_tracker.yaml
   
 sensor: !include sensors.yaml
 
