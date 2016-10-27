@@ -1,10 +1,4 @@
-homeassistant:
-  name: Home
-  temperature_unit: F
-  time_zone: !env_var HOME_TIMEZONE 
-  elevation: !env_var HOME_ELEVATION
-  latitude: !env_var HOME_LATITUDE
-  longitude: !env_var HOME_LONGITUDE
+homeassistant: !include homeassistant.yaml
 
 weblink: !include weblinks.yaml
 
