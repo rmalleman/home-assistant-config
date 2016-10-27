@@ -1,0 +1,47 @@
+  people: device_tracker.qhaatboe_kltespr
+  Computer:
+   - binary_sensor.mattsvps
+   - sensor.cpu
+   - sensor.speedtest_download
+   - sensor.speedtest_ping
+   - sensor.speedtest_upload
+   - sensor.sab_disk
+   - sensor.sab_disk_free
+   - sensor.sab_left
+   - sensor.sab_queue
+   - sensor.sab_speed
+   - sensor.sab_status
+  weather:
+   - sun.sun
+   - sensor.forecastio_apparent_temperature
+   - sensor.forecastio_cloud_coverage
+   - sensor.forecastio_humidity
+   - sensor.forecastio_icon
+   - sensor.forecastio_nearest_storm_bearing
+   - sensor.forecastio_nearest_storm_distance
+   - sensor.forecastio_precip
+   - sensor.forecastio_precip_intensity
+   - sensor.forecastio_precip_probability
+   - sensor.forecastio_pressure
+   - sensor.forecastio_summary
+   - sensor.forecastio_temperature
+   - sensor.forecastio_wind_bearing
+   - sensor.forecastio_wind_speed
+   - sensor.forecastio_visibility
+  nest:
+    - sensor.kitchen_temperature
+    - sensor.kitchen_target
+    - sensor.kitchen_humidity
+    - sensor.kitchen_mode
+    - sensor.kitchen_last_ip
+    - sensor.kitchen_local_ip
+    - sensor.kitchen_last_connection
+    - sensor.kitchen_battery_level
+    - sensor.kitchen_weather_condition
+    - sensor.kitchen_weather_temperature
+    - sensor.kitchen_weather_humidity
+    - sensor.kitchen_wind_speed
+    - sensor.kitchen_wind_direction
+    - sensor.downstairs_co_status
+    - sensor.downstairs_smoke_status
+
