@@ -1,0 +1,6 @@
+platform: kodi
+host: !env_var KODI_HOST
+port: !env_var KODI_PORT
+name: Kodi
+user: !env_var KODI_USERNAME
+password: !env_var KODI_PASSWORD

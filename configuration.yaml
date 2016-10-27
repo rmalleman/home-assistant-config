@@ -14,14 +14,7 @@ zone: !include zones.yaml
 
 proximity: !include proximity.yaml
 
-media_player:
-  platform: kodi
-  host: !env_var KODI_HOST
-  port: !env_var KODI_PORT
-  name: Kodi
-  user: !env_var KODI_USERNAME
-  password: !env_var KODI_PASSWORD
-
+media_player: !include media_player.yaml
 
 device_tracker:
   - platform: nmap_tracker
