@@ -1,0 +1,21 @@
+- name: Mom's
+  latitude: !env_var ZONE_LATITUDE_MOM
+  longitude: !env_var ZONE_LONGITUDE_MOM
+  radius: 25
+  icon: mdi:home
+- name: Dad's
+  latitude: !env_var ZONE_LATITUDE_DAD
+  longitude: !env_var ZONE_LONGITUDE_DAD
+  radius: 25
+  icon: mdi:home
+- name: Andy's
+  latitude: !env_var ZONE_LATITUDE_ANDY
+  longitude: !env_var ZONE_LONGITUDE_ANDY
+  radius: 25
+  icon: mdi:home
+- name: Artemis
+  latitude: !env_var ZONE_LATITUDE_ARTEMIS
+  longitude: !env_var ZONE_LONGITUDE_ARTEMIS
+  radius: 25
+  icon: mdi:office
+
