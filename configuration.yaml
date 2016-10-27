@@ -32,10 +32,7 @@ group: !include groups.yaml
 digital_ocean:
   access_token: !env_var DIGITAL_OCEAN_KEY
  
-binary_sensor:
-  - platform: digital_ocean
-    droplets:
-      - 'mattsvps'
+binary_sensor: !include binary_sensor.yaml
 
 # Discover some devices automatically
 discovery:
