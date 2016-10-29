@@ -1,3 +1,5 @@
+---
+
 broker: !env_var MQTT_BROKER
 port: !env_var MQTT_PORT
 client_id: !env_var MQTT_CLIENT_ID

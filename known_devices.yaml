@@ -1,6 +1,8 @@
+---
+
 qhaatboe_kltespr:
   name: Matt
   mac: !env_var MATT_MAC
   picture: !env_var MATT_PICTURE
-  track: yes
-  hide_if_away: no
+  track: 'yes'
+  hide_if_away: 'no'

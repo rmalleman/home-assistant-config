@@ -1,9 +1,11 @@
+---
+
 homeassistant: !include homeassistant.yaml
 
 weblink: !include weblinks.yaml
 
 notify: !include notify.yaml
-  
+
 zone: !include zones.yaml
 
 proximity: !include proximity.yaml
@@ -11,7 +13,7 @@ proximity: !include proximity.yaml
 media_player: !include media_player.yaml
 
 device_tracker: !include device_tracker.yaml
-  
+
 sensor: !include sensors.yaml
 
 nest:
@@ -21,11 +23,11 @@ nest:
 climate:
   platform: nest
 
-group: !include groups.yaml 
+group: !include groups.yaml
 
 digital_ocean:
   access_token: !env_var DIGITAL_OCEAN_KEY
- 
+
 binary_sensor: !include binary_sensor.yaml
 
 # Discover some devices automatically
@@ -52,6 +54,6 @@ history:
 http:
   api_password: !env_var HTTP_API_PASSWORD
 
-mqtt: !include mqtt.yaml 
+mqtt: !include mqtt.yaml
 
 automation: !include automation.yaml

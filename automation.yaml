@@ -1,3 +1,5 @@
+---
+
 - alias: Send matt a sms when nobody is home
   trigger:
     platform: state
@@ -10,7 +12,6 @@
       message: 'everyone has left the house'
       target:
         - !env_var MATT_SMS_EMAIL
-
 
 - alias: Send matt a sms when somebody gets home
   trigger:
@@ -25,7 +26,6 @@
       target:
         - !env_var MATT_SMS_EMAIL
 
-
 - alias: Send matt a sms when file starts downloading
   trigger:
     platform: state
@@ -38,6 +38,7 @@
       message: 'file downloading'
       target:
         - !env_var MATT_SMS_EMAIL
+
 - alias: Update notifications
   trigger:
     - platform: state
@@ -48,4 +49,3 @@
       message: 'There is a new Home Assistant release available.'
       target:
         - !env_var MATT_SMS_EMAIL
-

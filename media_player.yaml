@@ -1,3 +1,5 @@
+---
+
 platform: kodi
 host: !env_var KODI_HOST
 port: !env_var KODI_PORT
