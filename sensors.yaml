@@ -9,7 +9,7 @@
 - platform: cpuspeed
   name: CPU
 
-- platform: forecast
+- platform: darksky
   api_key: !env_var FORECAST_API_KEY
   monitored_conditions:
     - summary
