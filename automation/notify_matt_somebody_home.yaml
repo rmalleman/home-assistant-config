@@ -1,0 +1,14 @@
+---
+
+- alias: Send matt a sms when somebody gets home
+  trigger:
+    platform: state
+    entity_id: group.all_devices
+    from: 'not_home'
+    to: 'home'
+  action:
+    service: notify.send_matt
+    data:
+      message: 'somebody is now home'
+      target:
+        - !env_var MATT_SMS_EMAIL

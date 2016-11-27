@@ -1,0 +1,14 @@
+---
+
+- alias: Send matt a sms when file starts downloading
+  trigger:
+    platform: state
+    entity_id: sensor.sab_status
+    from: 'Idle'
+    to: 'Downloading'
+  action:
+    service: notify.send_matt
+    data:
+      message: 'file downloading'
+      target:
+        - !env_var MATT_SMS_EMAIL

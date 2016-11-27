@@ -56,4 +56,4 @@ http:
 
 mqtt: !include mqtt.yaml
 
-automation: !include automation.yaml
+automation: !include_dir_merge_list automation
