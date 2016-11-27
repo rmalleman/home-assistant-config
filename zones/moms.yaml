@@ -1,0 +1,7 @@
+---
+
+- name: Mom's
+  latitude: !env_var ZONE_LATITUDE_MOM
+  longitude: !env_var ZONE_LONGITUDE_MOM
+  radius: 25
+  icon: mdi:home

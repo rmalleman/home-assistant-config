@@ -1,0 +1,7 @@
+---
+
+- name: Andy's
+  latitude: !env_var ZONE_LATITUDE_ANDY
+  longitude: !env_var ZONE_LONGITUDE_ANDY
+  radius: 25
+  icon: mdi:home

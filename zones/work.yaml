@@ -1,0 +1,8 @@
+---
+
+- name: Artemis
+  latitude: !env_var ZONE_LATITUDE_ARTEMIS
+  longitude: !env_var ZONE_LONGITUDE_ARTEMIS
+  radius: 25
+  icon: mdi:office
+

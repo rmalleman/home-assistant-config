@@ -6,7 +6,7 @@ weblink: !include weblinks.yaml
 
 notify: !include notify.yaml
 
-zone: !include zones.yaml
+zone: !include_dir_merge_list zones
 
 proximity: !include proximity.yaml
 

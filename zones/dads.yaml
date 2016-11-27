@@ -1,0 +1,7 @@
+---
+
+- name: Dad's
+  latitude: !env_var ZONE_LATITUDE_DAD
+  longitude: !env_var ZONE_LONGITUDE_DAD
+  radius: 25
+  icon: mdi:home
