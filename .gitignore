@@ -3,4 +3,4 @@
 .HA_VERSION
 .uuid
 deps/
-nest.conf
+*.conf
