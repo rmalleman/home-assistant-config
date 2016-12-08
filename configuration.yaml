@@ -17,8 +17,8 @@ device_tracker: !include device_tracker.yaml
 sensor: !include sensors.yaml
 
 nest:
-  username: !env_var NEST_USERNAME
-  password: !env_var NEST_PASSWORD
+  client_id: !env_var NEST_CLIENT_ID
+  client_secret: !env_var NEST_SECRET
 
 climate:
   platform: nest
