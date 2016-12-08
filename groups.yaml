@@ -30,19 +30,18 @@ weather:
 - sensor.dark_sky_wind_bearing
 - sensor.dark_sky_wind_speed
 - sensor.dark_sky_visibility
+
 nest:
-- sensor.kitchen_temperature
-- sensor.kitchen_target
-- sensor.kitchen_humidity
-- sensor.kitchen_mode
-- sensor.kitchen_last_ip
-- sensor.kitchen_local_ip
-- sensor.kitchen_last_connection
-- sensor.kitchen_battery_level
-- sensor.kitchen_weather_condition
-- sensor.kitchen_weather_temperature
-- sensor.kitchen_weather_humidity
-- sensor.kitchen_wind_speed
-- sensor.kitchen_wind_direction
-- sensor.downstairs_co_status
-- sensor.downstairs_smoke_status
+- binary_sensor.downstairs_nest_protect_online
+- binary_sensor.kitchen_thermostat_fan
+- binary_sensor.kitchen_thermostat_has_leaf
+- binary_sensor.kitchen_thermostat_is_locked
+- binary_sensor.kitchen_thermostat_is_using_emergency_heat
+- binary_sensor.kitchen_thermostat_online
+- sensor.downstairs_nest_protect_battery_health
+- sensor.downstairs_nest_protect_co_status
+- sensor.downstairs_nest_protect_smoke_status
+- sensor.kitchen_thermostat_humidity
+- sensor.kitchen_thermostat_operation_mode
+- sensor.kitchen_thermostat_target
+- sensor.kitchen_thermostat_temperature
