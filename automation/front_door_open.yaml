@@ -1,0 +1,18 @@
+---
+
+- alias: Open front door automation
+  trigger:
+    platform: state
+    entity_id: switch.front_door
+    from: 'on'
+    to: 'off'
+  action:
+    - service: notify.send_matt
+      data:
+        message: 'Front Door Open'
+        target:
+          - !env_var MATT_SMS_EMAIL
+    - service: tts.google_say
+      entity_id: media_player.living_room_home
+      data:
+        message: 'Front Door Open'

@@ -4,3 +4,5 @@
 .uuid
 deps/
 *.conf
+tts/
+gtfs/

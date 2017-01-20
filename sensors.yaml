@@ -40,3 +40,8 @@
     - 'queue_remaining'
     - 'disk_size'
     - 'disk_free'
+
+- platform: gtfs
+  data: uta.zip 
+  origin: 18382
+  destination: 18384

@@ -45,3 +45,4 @@ nest:
 - sensor.kitchen_thermostat_operation_mode
 - sensor.kitchen_thermostat_target
 - sensor.kitchen_thermostat_temperature
+- sensor.kitchen_thermostat_hvac_state
