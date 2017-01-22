@@ -44,4 +44,4 @@
 - platform: gtfs
   data: uta.zip 
   origin: 18382
-  destination: 18384
+  destination: 18406
