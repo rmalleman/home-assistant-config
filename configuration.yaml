@@ -59,10 +59,18 @@ mqtt: !include mqtt.yaml
 automation: !include_dir_merge_list automation
 
 vera:
-  vera_controller_url: http://192.168.1.201:3480
+  vera_controller_url: !env_var VERA_URL 
   lights: [5, 6, 8]
 
 tts:
   - platform: google
 
-
+influxdb:
+  host: !env_var INFLUXDB_HOST
+  database: !env_var INFLUXDB_DATABASE
+  username: !env_var INFLUXDB_USERNAME
+  password: !env_var INFLUXDB_PASSWORD
+  default_measurement: state
+  tags:
+    instance: prod
+    source: hass
