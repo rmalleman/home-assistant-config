@@ -3,7 +3,7 @@
 - alias: Open front door automation
   trigger:
     platform: state
-    entity_id: binary_sensor.front_door_sensor
+    entity_id: binary_sensor.front_door_sensor_10
     from: 'off'
     to: 'on'
   action:
