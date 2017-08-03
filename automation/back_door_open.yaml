@@ -1,18 +1,18 @@
 ---
 
-- alias: Open front door automation
+- alias: Open back door automation
   trigger:
     platform: state
-    entity_id: binary_sensor.front_door_sensor_10
+    entity_id: binary_sensor.back_door_sensor_31
     from: 'off'
     to: 'on'
   action:
     - service: notify.send_matt
       data:
-        message: 'Front Door Open'
+        message: 'Back Door Open'
         target:
           - !env_var MATT_SMS_EMAIL
     - service: tts.google_say
       entity_id: group.google_home
       data:
-        message: 'Front Door Open'
+        message: 'Back Door Open'

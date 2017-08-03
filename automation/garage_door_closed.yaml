@@ -1,18 +1,18 @@
 ---
 
-- alias: Open front door automation
+- alias: Closed garage automation
   trigger:
     platform: state
-    entity_id: binary_sensor.front_door_sensor_10
-    from: 'off'
-    to: 'on'
+    entity_id: cover.garage_door_opener
+    from: 'open'
+    to: 'closed'
   action:
     - service: notify.send_matt
       data:
-        message: 'Front Door Open'
+        message: 'Garage Closed'
         target:
           - !env_var MATT_SMS_EMAIL
     - service: tts.google_say
       entity_id: group.google_home
       data:
-        message: 'Front Door Open'
+        message: 'Garage Closed'
