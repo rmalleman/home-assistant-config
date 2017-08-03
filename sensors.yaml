@@ -41,7 +41,7 @@
     - 'disk_size'
     - 'disk_free'
 
-- platform: gtfs
-  data: uta.zip 
-  origin: 18382
-  destination: 18406
+#- platform: gtfs
+#  data: uta.zip 
+#  origin: 18382
+#  destination: 18406

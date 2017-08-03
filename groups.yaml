@@ -30,7 +30,6 @@ weather:
 - sensor.dark_sky_wind_bearing
 - sensor.dark_sky_wind_speed
 - sensor.dark_sky_visibility
-
 nest:
 - binary_sensor.downstairs_nest_protect_online
 - binary_sensor.kitchen_thermostat_fan
@@ -46,3 +45,6 @@ nest:
 - sensor.kitchen_thermostat_target
 - sensor.kitchen_thermostat_temperature
 - sensor.kitchen_thermostat_hvac_state
+google_home:
+- media_player.bedroom_home
+- media_player.living_room_home
